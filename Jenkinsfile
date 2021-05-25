@@ -1,9 +1,11 @@
 node() {
   stage 'Checkout'
-  checkout scm: [$class: 'GitSCM', branches: [[name: '*/${GIT_BRANCH}']], userRemoteConfigs: [[url: '${GIT_URL}']]]
 
 	stage 'Setup'
 		showenv();
+
+	stage 'Checkout'
+		checkout scm: [$class: 'GitSCM', branches: [[name: '*/${GIT_BRANCH}']], userRemoteConfigs: [[url: '${GIT_URL}']]]
 
   stage 'Build'
   	sh('env');
