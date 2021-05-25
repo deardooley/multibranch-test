@@ -5,7 +5,7 @@ node() {
 		showenv();
 
 	stage 'Checkout'
-		checkout scm: [$class: 'GitSCM', branches: [[name: '*/${GIT_BRANCH}']], userRemoteConfigs: [[url: '${GIT_URL}']]]
+		checkout scm
 
   stage 'Build'
   	sh('env');
